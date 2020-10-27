@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "2475cc9a-5dbf-4cf6-bd75-3d63b129be6f",
+		"name": "Eduvanz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{HOST}/api/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Brinish Britto",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "24",
+							"type": "text"
+						},
+						{
+							"key": "dob",
+							"value": "1996-05-30",
+							"type": "text"
+						},
+						{
+							"key": "profession",
+							"value": "Student",
+							"type": "text"
+						},
+						{
+							"key": "locality",
+							"value": "Mumbai",
+							"type": "text"
+						},
+						{
+							"key": "guests",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "India",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "Register API"
+			},
+			"response": []
+		},
+		{
+			"name": "{HOST}/api/list/{PAGINATION_PAGE_NO}/{RECORDS_PER_PAGE}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/list/2/10",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"list",
+						"2",
+						"10"
+					]
+				},
+				"description": "List API"
+			},
+			"response": []
+		},
+		{
+			"name": "{HOST}/api/update/{RECORD_ID}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Brinish Britto",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "21",
+							"type": "text"
+						},
+						{
+							"key": "dob",
+							"value": "1991-12-01",
+							"type": "text"
+						},
+						{
+							"key": "profession",
+							"value": "Employed",
+							"type": "text"
+						},
+						{
+							"key": "locality",
+							"value": "Mumbai",
+							"type": "text"
+						},
+						{
+							"key": "guests",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "India",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/update/11",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"update",
+						"11"
+					]
+				},
+				"description": "Update API"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
