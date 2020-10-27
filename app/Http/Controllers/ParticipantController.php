@@ -2,11 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ParticipantRequest;
 use App\Participant;
+use Illuminate\Http\Request;
+use App\Http\Requests\ParticipantRequest;
+use Yajra\DataTables\Facades\DataTables;
 
 class ParticipantController extends Controller
 {
+    /**
+     *  Admin Panel to view all Participants
+     */
+    public function dashboard(Request $request)
+    {
+        if($request->ajax())
+        {
+            $participants = Participant::latest('id');
+            
+            return DataTables::of($participants)->make(true);
+        }
+
+        return view('dashboard');
+    }
+
     /**
      *  Create a new Participant
      */

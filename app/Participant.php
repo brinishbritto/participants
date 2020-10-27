@@ -8,13 +8,6 @@ class Participant extends Model
 {
     protected $fillable = ['name', 'age', 'dob', 'profession', 'locality', 'guests', 'address'];
 
-    public function setProfessionAttribute($value)
-    {
-        $profession = ['Employed' => '1', 'Student' => '2'];
-
-        $this->attributes['profession'] = $profession[$value];
-    }
-
     public function getProfessionAttribute($value)
     {
         $profession = ['1' => 'Employed', '2' => 'Student'];
@@ -30,5 +23,19 @@ class Participant extends Model
     public function getUpdatedAtAttribute($value)
     {
         return date('Y-m-d H:i:s', strtotime($value));
+    }
+
+    public function getIsActiveAttribute($value)
+    {
+        $status = ['1' => 'Active', '0' => 'Inactive'];
+
+        return $status[$value];
+    }
+
+    public function setProfessionAttribute($value)
+    {
+        $profession = ['Employed' => '1', 'Student' => '2'];
+
+        $this->attributes['profession'] = $profession[$value];
     }
 }
